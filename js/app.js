@@ -19,6 +19,19 @@ var openHours = [
 
 var country = ['Seattle', 'Tokyo', 'Dubai', 'Paris', 'Lima'];
 
+ Place function(min,max,avg,numberofCustomer,cookiesAomuntPH){
+    this.min=min;
+    this.max=max;
+    this.avg=avg;
+    this.numberofCustomer=[];
+    this.cookiesAomuntPH=[];
+    total=0;
+}
+
+var saleh= new Place(10,20,2.6,['saleh','saleh'],['saleh2','s2aleh']);
+
+console.log(saleh);
+
 var seattle = {
   min: 23,
   max: 65,
