@@ -19,35 +19,30 @@ var openHours = [
 
 var country = ['Seattle', 'Tokyo', 'Dubai', 'Paris', 'Lima'];
 
-//  each country[shop location] has an object.
-// litteral objects
-// franchise #1
 var seattle = {
   min: 23,
   max: 65,
   avg: 6.3,
   numberofCustomer: [],
   cookiesAomuntPH: [],
-  total: 0, //Calculating the sum of these hourly total
+  total: 0,
 
-  // a method of this object to generate a random number of customers per hour.
-  randomCperH: function() {
+  randomCperH: function () {
     this.numberofCustomer.push(
       Math.floor(
         Math.random() *
-          (this.max - this.min) +
-          this.min
+                (this.max - this.min) +
+                this.min
       )
     );
   },
 
-  // a method of this object to calculate cookeis amount of per hourusing average cookies purchased and the random number of customers.
-  cookiesPH: function() {
+  cookiesPH: function () {
     for (let i = 0; i < openHours.length; i++) {
       this.randomCperH();
       var cookies = Math.floor(
         this.numberofCustomer[i] *
-          this.avg
+                this.avg
       );
       // stored in the array (cookiesAomuntPH)
       this.cookiesAomuntPH.push(cookies);
@@ -60,7 +55,7 @@ var seattle = {
 
   // creating elements on HTML to hold the above collected data
   //   Display the values of each array as unordered lists in the browser
-  render: function() {
+  render: function () {
     this.cookiesPH();
     var mainEl = document.getElementById('main');
     var articleEl = document.createElement('article');
@@ -71,15 +66,15 @@ var seattle = {
 
     var ulEl = document.createElement('ul');
     articleEl.appendChild(ulEl);
-    // creating the li elements using the for loop
+
     for (let i = 0; i < openHours.length; i++) {
       var liEl = document.createElement('li');
       ulEl.appendChild(liEl);
       liEl.textContent =
-        openHours[i] +
-        ' : ' +
-        `${this.cookiesAomuntPH[i]}` +
-        ' cookies';
+                openHours[i] +
+                ' : ' +
+                `${this.cookiesAomuntPH[i]}` +
+                ' cookies';
     }
     // the total summation of the cookies
     var totalEl = document.createElement('li');
