@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-trailing-spaces */
 /* eslint-disable indent */
 'use strict';
 //array for the open hours contain 14 E
@@ -17,6 +19,7 @@ var openHours = [
     '10:00 AM',
     '11:00 AM'
 ];
+var totalNewStore=0;
 
 // array to store objects.
 var countryInfo = [];
@@ -35,7 +38,6 @@ function Store(
     this.avg = avg;
     this.totalOfTotal = 0; //total of total in all locals.
     this.totalCookies = 0;
-    this.tossersNumberPerHour = [];
     countryInfo.push(this);
 }
 
@@ -61,17 +63,6 @@ Store.prototype.cookiesPurchasedPerHour = function () {
         this.totalCookies += cookies;
     }
 };
-
-Store.prototype.tossersNumber = function () {
-    for (var i = 0; i < openHours.length; i++) {
-        this.tossersNumberPerHour.push(
-            Math.ceil(Math.ceil(this.randomCustomersPH[i] / 20))
-        );
-        this.totalOfTotal += this.tossersNumberPerHour[i];
-
-    }
-};
-
 var containerTable = document.getElementById('Table');
 var tableEl = document.createElement('table');
 containerTable.appendChild(tableEl);
@@ -97,7 +88,6 @@ tableHead();
 
 Store.prototype.renderConstructor = function () {
     this.cookiesPurchasedPerHour();
-    this.tossersNumber();
     var rows = document.createElement('tbody');
     tableEl.appendChild(rows);
     rows.textContent = this.storeAddress;
@@ -109,7 +99,8 @@ Store.prototype.renderConstructor = function () {
     }
     tableData = document.createElement('td');
     rows.appendChild(tableData);
-    tableData.textContent = this.totalCookies + ' cookies';
+    tableData.textContent = this.totalCookies +' cookies';
+    
 };
 
 // creating objects :
@@ -145,5 +136,36 @@ function tableFooter() {
     tdEl = document.createElement('td');
     rows.appendChild(tdEl);
     tdEl.textContent = `${totalOfTotal} total of totatl `;
+   
 }
+var x1=0;
 tableFooter();
+var storValue=document.getElementById('newStoreValue');
+storValue.addEventListener('submit',function(event){
+    ++x1;
+    event.preventDefault();
+    console.log(event);
+    var shopName=event.target.storeLocationName.value;
+    var newMinValOfC=event.target.minimumValOfCust.value;
+    var newMaxValue=event.target.maximumValOfCust.value;
+    var newAvgValue=event.target.avgVal.value;
+    console.log(shopName);
+    console.log(newMinValOfC);
+    console.log(newAvgValue);
+    console.log(newMaxValue);
+    
+    var newLocation=new Store(shopName,newMinValOfC,newMaxValue,newAvgValue);
+    document.getElementById('tfoot').remove();
+    newLocation.randomCustomersPerHour();
+    newLocation.renderConstructor();
+    
+    totalNewStore=newLocation.totalCookies;
+    tableFooter();
+    console.log(totalNewStore);
+});
+storValue.reset();
+
+// storeAddress,
+// min,
+// max,
+// avg

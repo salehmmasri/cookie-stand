@@ -45,3 +45,43 @@ footer p{
     padding: 10px;
 
 }
+.store{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: -webkit-center;
+}
+#newStoreValue{
+background: linear-gradient(to right, #ee9ca7 0%, #ffdde1 100%); 
+ border-radius: 15px;
+ width: 50%;
+padding: 15px;
+color:black;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color:black;
+    opacity: 1;
+}
+
+input {
+ word-spacing: 1px;
+ border: 2px solid black;
+  border-radius: 2px;
+  height: 30px;
+  width: 100%;
+  font-weight: bolder;
+  background: linear-gradient(to right, #FFAFBD
+  0%, #f2709c 100%); 
+  text-align: center;
+}
+.sub{
+    margin-top: 10px;
+    width: 130px;
+    background: linear-gradient(to right, #ee9ca7 0%, white 100%); 
+
+    
+}
+fieldset{
+    border-radius:5px ;
+    border:black solid 3px ;
+}
