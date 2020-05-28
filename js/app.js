@@ -164,8 +164,3 @@ storValue.addEventListener('submit',function(event){
     console.log(totalNewStore);
 });
 storValue.reset();
-
-// storeAddress,
-// min,
-// max,
-// avg

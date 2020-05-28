@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
 body{
     font-family: 'Bebas Neue', cursive;
     font-size: 20px;
@@ -28,7 +29,6 @@ header h1{
 }
 header{
     background-color: black;
-    margin-bottom: 5px;
     width: 100%;
 }
 footer{
@@ -84,4 +84,81 @@ input {
 fieldset{
     border-radius:5px ;
     border:black solid 3px ;
+}
+nav ul li a{
+    text-decoration: none;
+    list-style: none;
+    color:white;
+    
+}
+nav ul{
+    margin: 0;
+    display: inline;
+    text-align: right;
+}
+nav ul li{
+    margin-left: 5px;
+    display: inline;
+    margin-right: 20px;
+}
+nav{
+    float: right;
+    display: inline;
+    line-height: 2.5;
+}
+#logo {
+    display: inline;
+    margin-left: 20px;
+
+}
+ a:hover{
+    color:#ee9ca7 !important;
+}
+#slide{
+    background-color: #ee9ca7;
+    padding: 160px 0;
+    text-align: center;
+    background-image: url("../img/salmon.png");
+    background-size: contain;    
+}
+#slide p{
+    font-size: 60px;
+    margin: 0;
+    font-style: oblique;
+    color: white;
+    letter-spacing: 2px;
+}
+
+.market {
+    width: 70%;
+    margin: 30px auto;
+    /* border: 3px solid ; */
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background: linear-gradient(to left, #ee9ca7 0%, white 100%);;
+    font-family: 'Dancing Script', cursive;
+}
+.market iframe{
+    width: 30%;
+    height: 200px;
+    margin: 10px;
+}
+.market h3{
+    font-style: oblique;
+    font-size: 30px;
+    text-align: center;
+    margin: 5px;
+    letter-spacing: 2px;
+}
+.market img{
+    margin: 10px;
+    width: 65%;
+    height: 200px;
+}
+.market hr{
+    border: 2px dashed black;
+    width: 90%;
+}
+main{
+    background-color: #f7f7f7;
 }
